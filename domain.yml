@@ -1,0 +1,122 @@
+version: "3.1"
+
+intents:
+- classroom_info
+- gratitude
+- χαιρετισμός
+- αποχαιρετισμός
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- get_professor_info
+- get_specific_professor_info
+- lectures_info
+
+entities:
+- professor_name
+- attribute
+- classroom
+- lesson
+
+slots:
+  lesson:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: lesson
+  classroom:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: classroom
+  professor_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: professor_name
+  attribute:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: attribute
+  action:
+    type: text
+    mappings:
+      - type: from_intent
+        intent: get_professor_info
+        value: "utter_ask_attribute"
+      - type: from_intent
+        intent: get_specific_professor_info
+        value: "action_get_specific_professor_info"
+  intent:
+    type: text
+    mappings:
+      - type: from_text
+      
+forms:
+ get_professor_info_form:
+  required_slots:
+    - professor_name
+    - attribute
+
+responses:
+ utter_default:
+    - text: "Συγγνώμη, Δεν κατάλαβα την ερώτησή σας. Μπορείτε να επαναλάβετε;"
+ utter_need_help:
+ - text: "Χρειάζεστε κάτι άλλο;"
+ - text: "Μήπως μπορώ να σας βοηθήσω περαιτέρω;"
+ 
+ utter_ask_professor_name:
+ - text: "Ποιο είναι το όνομα του καθηγητή;"
+
+ utter_ask_attribute:
+ - text: "Ποια συγκεκριμένα στοιχεία θέλετε να μάθετε για τον καθηγητή {professor_name}; (π.χ. email, τηλέφωνο)"
+
+ utter_χαιρετισμός:
+ - text: "Γεια σας! Πώς μπορώ να σας βοηθήσω σήμερα;"
+
+ utter_cheer_up:
+ - text: "Here is something to cheer you up:"
+   image: "https://imgur.com/Cn3vX"
+
+ utter_did_that_help:
+ - text: "Did that help you?"
+
+ utter_happy:
+ - text: "Έξοχα!"
+ 
+ utter_gratitude:
+ - text: "Ελπίζω να ήμουν χρήσιμος! Καλή συνέχεια!"
+ - text: "Χαίρομαι που σας εξυπηρέτησα!"
+ - text: "Χαίρομαι που ήμουν χρήσιμος!"
+ 
+ utter_αποχαιρετισμός:
+ - text: "Αντίο"
+ - text: "Στο καλό!"
+ - text: "Καλή συνέχεια!"
+
+ utter_iamabot:
+ - text: "I am a bot, powered by Rasa."
+
+actions:
+ - utter_gratitude
+ - utter_ask_professor_name
+ - utter_ask_attribute
+ - utter_χαιρετισμός
+ - utter_cheer_up
+ - utter_did_that_help
+ - utter_happy
+ - utter_αποχαιρετισμός
+ - utter_iamabot
+ - action_get_specific_professor_info
+ - action_get_classroom_info
+ - action_get_lectures_info
+ - utter_default
+ - action_default_fallback
+
+
+session_config:
+ session_expiration_time: 60
+ carry_over_slots_to_new_session: true
