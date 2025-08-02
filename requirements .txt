@@ -33,6 +33,9 @@ gevent==1.4.0
 pytz==2018.9
 rasa_core_sdk~=0.14.0
 pymongo==3.7.2
+rasa==3.6.15  # Replace with your Rasa version
+spacy~=3.5.0  # Required for NLU
+python~=3.8   # Specify Python version
 python-dateutil==2.7.5
 rocketchat_API==0.6.25
 colorclass==2.2.0
