@@ -1,0 +1,69 @@
+version: "3.1"
+
+stories:
+
+- story: Get lectures info
+  steps:
+  - intent: lectures_info
+  - action: action_get_lectures_info
+
+- story: Get classroom info
+  steps:
+  - intent: classroom_info
+  - action: action_get_classroom_info
+  
+- story: Get professor info
+  steps:
+  - intent: get_professor_info
+  - action: utter_ask_attribute
+
+ 
+- story: Get specific professor info
+  steps:
+  - intent: get_specific_professor_info
+  - slot_was_set:
+    - professor_name: "some_value"
+  - slot_was_set:
+    - attribute: "some_value"
+  - action: action_get_specific_professor_info
+  
+- story: περαιτέρω βοήθεια
+  steps:
+  - intent: mood_great
+  - action: utter_need_help
+  - intent: deny
+  - action: utter_αποχαιρετισμός
+  
+- story: greet user
+  steps:
+  - intent: χαιρετισμός
+  - action: utter_χαιρετισμός
+
+- story: happy path
+  steps:
+  - intent: χαιρετισμός
+  - action: utter_χαιρετισμός
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: χαιρετισμός
+  - action: utter_χαιρετισμός
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: χαιρετισμός
+  - action: utter_χαιρετισμός
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_αποχαιρετισμός
+  
+

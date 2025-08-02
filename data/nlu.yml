@@ -1,0 +1,109 @@
+version: "3.1"
+
+nlu:
+
+- intent: lectures_info
+  examples: |
+    - Που διδάσκεται το μάθημα [Λογικός Προγραμματισμός](lesson);
+    - Που διδάσκεται το μάθημα [Συστήματα Γνώσης](lesson);
+    - Που διδάσκεται το μάθημα [Τεχνητή Νοημοσύνη](lesson);
+    - Που διδάσκεται το μάθημα [Μαθηματικά](lesson);
+    - Που διδάσκεται ο [Λογικός Προγραμματισμός](lesson);
+    - Που διδάσκεται το μάθημα [Συστήματα Γνώσης](lesson);
+    - Το μάθημα [Βιοϊατρική](lesson) που διδάσκεται;
+    - Σε ποια αίθουσα διδάσκεται το μάθημα [Java 1](lesson); 
+    - [Βιοϊατρική Πληροφορική](lesson)
+    - [Συστήματα Γνώσης](lesson)
+    - [Τεχνητή Νοημοσύνη](lesson)
+    - [Java 1](lesson)
+    - [Ηλεκτρονικά 1](lesson)
+    - [Φυσική Ι](lesson)
+  
+- intent: classroom_info
+  examples: |
+    - Ποιο [μάθημα](attribute) διδάσκεται στην αίθουσα [ΣΕΥΠ](classroom);
+    - Ποια [μαθήματα](attribute) διδάσκονται στην [Γ6](classroom);
+    - [ΚΑΜΑΡΗΣ](classroom)
+    - [Γ6](classroom)
+    - [ΣΕΥΠ](classroom)
+    - [Γ7](classroom)
+    - [ΣΤΕΦ1](classroom)
+
+- intent: get_professor_info
+  examples: |
+    - Θέλω τα στοιχεία του [Μαρακάκη](professor_name)
+    - Θέλω πληροφορίες για τον καθηγητή [Παπαδάκη](professor_name)
+    - Δώσε μου λεπτομέρειες για τον [Τσικνάκη](professor_name)
+    - Θα ήθελα να μάθω περισσότερα για τον καθηγητή [Παπαδόπουλο](professor_name)
+    - [Μαλάμος](professor_name)
+    - [Βιδάκης](professor_name)
+    - [Μαρακάκης](professor_name)
+    - [Καραπιδάκης](professor_name)
+    - [Κορνάρος](professor_name)
+    - [Γραμματικάκης](professor_name)
+
+- intent: get_specific_professor_info
+  examples: |
+    - Ποια είναι τα [μαθήματα](attribute) που διδάσκει ο [Τσικνάκης](professor_name);
+    - Ποια [μαθήματα](attribute) διδάσκει ο [Βιδάκης](professor_name); 
+    - Θέλω τα [μαθήματα](attribute) που διδάσκει ο καθηγητής [Μαρακάκης](professor_name);
+    - Ποιο είναι το [email](attribute) του καθηγητή [Παπαδάκη](professor_name)
+    - Θέλω το [τηλέφωνο](attribute) του καθηγητή [Τσικνάκη](professor_name)
+    - Ποιες είναι οι ώρες γραφείου του [Παπαδόπουλου](professor_name)
+    - Θέλω το [email](attribute) του καθηγητή [Τσικνάκη](professor_name)
+    - Θέλω τις [ώρες γραφείου](attribute) του καθηγητή [Τσικνάκη](professor_name)
+    - Ποιο είναι το [τηλέφωνο](attribute) του καθηγητή [Παπαδάκη](professor_name)
+    - Θέλω το [email](attribute) του καθηγητή [Παπαδάκη](professor_name)
+    - Τι ώρες είναι διαθέσιμος ο [Παπαδάκης](professor_name) στο γραφείο του
+    - Ποιο είναι το [τηλέφωνο](attribute) της [Φραγκοπούλου](professor_name)
+    - Ποιες είναι οι [ώρες γραφείου](attribute) του [Παπαδόπουλου](professor_name)
+    - [email](attribute)
+    - [τηλέφωνο](attribute)
+    - [ώρες γραφείου](attribute)
+    - [μαθήματα](attribute)
+
+
+- intent: χαιρετισμός
+  examples: |
+    - Γειά
+    - Χαίρετε
+    - Καλημέρα
+    - Καλησπέρα
+    - Γειά σου 
+    - Τι κάνεις;
+
+- intent: gratitude
+  examples: |
+    - Ευχαριστώ
+    - Ευχαριστώ πολύ
+    - Thanks
+    - Thank you
+    - Merci
+
+- intent: αποχαιρετισμός
+  examples: |
+    - Αντίο!
+    - Καλή συνέχεια!
+    - Στο καλό!
+ 
+
+- intent: affirm
+  examples: |
+    - ναι
+    - όντως
+    - εννοείται
+    - πολύ ωραία
+    - σωστά
+
+- intent: deny
+  examples: |
+    - όχι
+    - δε νομίζω
+
+
+- intent: mood_great
+  examples: |
+    - τέλεια
+    - ωραία
+
+

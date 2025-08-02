@@ -1,0 +1,38 @@
+version: "3.1"
+
+rules:
+
+- rule: Say Αντίο! anytime the user says αντίο
+  steps:
+  - intent: αποχαιρετισμός
+  - action: utter_αποχαιρετισμός
+  
+- rule: Fallback rule
+  steps:
+  - intent: nlu_fallback
+  - action: action_default_fallback  
+  
+- rule: Gratitude
+  steps:
+  - intent: gratitude
+  - action: utter_gratitude
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  
+#- rule: Activate professor info form
+ # steps:
+ # - intent: get_professor_info
+ # - action: action_get_professor_info
+ # - active_loop: action_get_professor_info
+
+- rule: specific professor info
+  steps:
+  - slot_was_set:
+    - professor_name: "non_empty"
+    - intent: get_specific_professor_info
+    - action: action_get_specific_professor_info
+    
+
