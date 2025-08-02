@@ -1,0 +1,12 @@
+name: Run Online Commands
+on: [push]  # Trigger on push
+
+jobs:
+  run-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4  # Check out your repo
+      - name: Install Python
+        run: pip install -r requirements.txt
+      - name: Run a script
+        run: python myscript.py  # Your custom command
